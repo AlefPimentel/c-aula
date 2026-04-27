@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Imóvel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="carregar()">
+
+    <div class="container">
+        <h1>Editar Imóvel</h1>
+
+        <input id="id" readonly />
+        <input id="titulo" />
+
+        <select id="tipo">
+            <option>Casa</option>
+            <option>Apartamento</option>
+        </select>
+
+        <input id="preco" />
+
+        <button onclick="atualizar()">Atualizar</button>
+
+        <a href="index.html">Voltar</a>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Imóvel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2>🏠 NewImobiliaria</h2>
+        <div>
+            <a href="index.html">Início</a>
+            <a href="criar.html" class="active">Cadastrar</a>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO -->
+    <div class="page">
+        <div class="form-wrapper">
+
+            <div class="form-header">
+                <h1>Novo Imóvel</h1>
+                <p>Preencha os dados abaixo para cadastrar</p>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label>ID</label>
+                    <input id="id" placeholder="Ex: 1" />
+                </div>
+
+                <div class="field">
+                    <label>Tipo</label>
+                    <select id="tipo">
+                        <option>Casa</option>
+                        <option>Apartamento</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label>Título</label>
+                    <input id="titulo" placeholder="Ex: Casa no centro com 3 quartos" />
+                </div>
+
+                <div class="field full">
+                    <label>Preço</label>
+                    <input id="preco" placeholder="Ex: 350000" />
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button onclick="criar()" class="btn primary">Salvar</button>
+                <a href="index.html" class="btn ghost">Cancelar</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

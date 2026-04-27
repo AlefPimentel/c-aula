@@ -1,0 +1,5 @@
+wwwroot\app.js
+wwwroot\criar.html
+wwwroot\editar.html
+wwwroot\style.css
+wwwroot\index.html
