@@ -1,65 +1,7 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Novo Imóvel</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <h2>🏠 NewImobiliaria</h2>
-        <div>
-            <a href="index.html">Início</a>
-            <a href="criar.html" class="active">Cadastrar</a>
-        </div>
-    </nav>
-
-    <!-- CONTEÚDO -->
-    <div class="page">
-        <div class="form-wrapper">
-
-            <div class="form-header">
-                <h1>Novo Imóvel</h1>
-                <p>Preencha os dados abaixo para cadastrar</p>
-            </div>
-
-            <div class="form-grid">
-
-                <div class="field">
-                    <label>ID</label>
-                    <input id="id" placeholder="Ex: 1" />
-                </div>
-
-                <div class="field">
-                    <label>Tipo</label>
-                    <select id="tipo">
-                        <option>Casa</option>
-                        <option>Apartamento</option>
-                    </select>
-                </div>
-
-                <div class="field full">
-                    <label>Título</label>
-                    <input id="titulo" placeholder="Ex: Casa no centro com 3 quartos" />
-                </div>
-
-                <div class="field full">
-                    <label>Preço</label>
-                    <input id="preco" placeholder="Ex: 350000" />
-                </div>
-
-            </div>
-
-            <div class="form-actions">
-                <button onclick="criar()" class="btn primary">Salvar</button>
-                <a href="index.html" class="btn ghost">Cancelar</a>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="app.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cadastrar Imóvel</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="topbar"><div class="brand">🏠 NewImobiliaria</div><nav><a href="index.html">Home</a><a href="plp.html">PLP</a><a href="lp.html">LP</a><a href="criar.html" class="active">Cadastrar</a></nav></header>
+<div class="page"><div class="form-wrapper"><h1>Novo Imóvel</h1><div class="form-grid">
+<div class="field"><label>ID</label><input id="id"></div><div class="field"><label>Tipo</label><select id="tipo"><option>Casa</option><option>Apartamento</option></select></div>
+<div class="field full"><label>Título</label><input id="titulo"></div><div class="field"><label>Preço</label><input id="preco" type="number"></div><div class="field"><label>Cidade</label><input id="cidade"></div>
+<div class="field"><label>Área (m²)</label><input id="area" type="number"></div><div class="field"><label>Quartos</label><input id="quartos" type="number"></div></div>
+<div class="hero-actions"><button onclick="criar()" class="btn">Salvar</button><a class="btn ghost" href="index.html">Cancelar</a></div></div></div><script src="app.js"></script></body></html>

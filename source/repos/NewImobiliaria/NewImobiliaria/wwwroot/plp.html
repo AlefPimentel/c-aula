@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewImobiliaria | PLP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="listarPLP()">
+  <header class="topbar">
+    <div class="brand">🏠 NewImobiliaria</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plp.html" class="active">PLP</a>
+      <a href="lp.html">LP</a>
+      <a href="criar.html">Cadastrar</a>
+    </nav>
+  </header>
+  <main class="section">
+    <h1>PLP — Lista de imóveis</h1>
+    <div class="filters">
+      <input id="fCidade" placeholder="Cidade" />
+      <select id="fTipo"><option value="">Todos os tipos</option><option>Casa</option><option>Apartamento</option></select>
+      <button class="btn" onclick="listarPLP()">Filtrar</button>
+    </div>
+    <div id="plpList" class="grid"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

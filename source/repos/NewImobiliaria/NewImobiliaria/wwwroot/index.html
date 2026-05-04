@@ -1,31 +1,41 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <title>NewImobiliaria</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewImobiliaria | Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
-<body onload="listar()">
-
-    
-    <nav class="navbar">
-        <h2>🏠 NewImobiliaria</h2>
-        <div class="menu">
-            <a href="index.html">Início</a>
-            <a href="criar.html">Cadastrar</a>
-        </div>
+<body onload="listarShelf()">
+  <header class="topbar">
+    <div class="brand">🏠 NewImobiliaria</div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="plp.html">PLP</a>
+      <a href="lp.html">LP</a>
+      <a href="criar.html">Cadastrar</a>
     </nav>
+  </header>
 
-    
-    <div class="container">
-        <div class="header">
-            <h1>Imóveis Disponíveis</h1>
-            <a href="criar.html" class="btn">+ Novo Imóvel</a>
-        </div>
+  <main>
+    <section class="hero">
+      <h1>Encontre o imóvel ideal sem complicação</h1>
+      <p>Busca inteligente com experiência completa de Home, PLP, PDP e Landing Pages.</p>
+      <div class="hero-actions">
+        <a class="btn" href="plp.html">Ver imóveis</a>
+        <a class="btn ghost" href="lp.html">Simular contato</a>
+      </div>
+    </section>
 
-        <div id="lista" class="grid"></div>
-    </div>
+    <section class="section">
+      <div class="section-head">
+        <h2>Shelf em destaque</h2>
+        <a href="plp.html">Ver todos</a>
+      </div>
+      <div id="shelf" class="grid"></div>
+    </section>
+  </main>
 
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
