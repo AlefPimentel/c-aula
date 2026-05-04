@@ -20,11 +20,11 @@ namespace NewImobiliaria.Services
           Ideia:
          "O sistema dispara eventos, sem saber quem vai reagir"
         */
-        private ImovelSubject _subject;
+        private readonly EventBus _eventBus;
 
-        public ImovelService(ImovelSubject subject)
+        public ImovelService(EventBus eventBus)
         {
-            _subject = subject;
+            _eventBus = eventBus;
         }
 
         // =========================
@@ -38,7 +38,13 @@ namespace NewImobiliaria.Services
               Dispara evento de criação
              Todos os observers são notificados automaticamente
             */
-            _subject.Notificar("Imóvel cadastrado: " + imovel.Titulo);
+            _eventBus.Publish("novo_lead", new
+            {
+                imovel.Titulo,
+                imovel.Tipo,
+                imovel.Cidade,
+                imovel.Preco
+            });
 
             return imovel;
         }
@@ -96,11 +102,14 @@ namespace NewImobiliaria.Services
             i.Titulo = novo.Titulo;
             i.Tipo = novo.Tipo;
             i.Preco = novo.Preco;
+            i.Area = novo.Area;
+            i.Cidade = novo.Cidade;
+            i.Quartos = novo.Quartos;
 
             /*
               Dispara evento de atualização
             */
-            _subject.Notificar("Imóvel atualizado: " + i.Titulo);
+            _eventBus.Publish("imovel_atualizado", i);
 
             return i;
         }
@@ -120,7 +129,7 @@ namespace NewImobiliaria.Services
             /*
               Dispara evento de remoção
             */
-            _subject.Notificar("Imóvel removido: " + i.Titulo);
+            _eventBus.Publish("imovel_removido", i);
 
             return true;
         }

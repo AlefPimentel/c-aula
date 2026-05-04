@@ -1,21 +1,31 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace NewImobiliaria.Observer
 {
-    public class ImovelSubject
+    public class EventBus
     {
-        private List<IObserver> _observers = new List<IObserver>();
+        private readonly Dictionary<string, List<IObserver>> _observers = new();
 
-        public void AdicionarObserver(IObserver observer)
+        public void Subscribe(string evento, IObserver observer)
         {
-            _observers.Add(observer);
+            if (!_observers.ContainsKey(evento))
+            {
+                _observers[evento] = new List<IObserver>();
+            }
+
+            _observers[evento].Add(observer);
         }
 
-        public void Notificar(string mensagem)
+        public void Publish(string evento, object data)
         {
-            foreach (var obs in _observers)
+            if (!_observers.ContainsKey(evento))
             {
-                obs.Atualizar(mensagem);
+                return;
+            }
+
+            foreach (var observer in _observers[evento])
+            {
+                observer.Update(evento, data);
             }
         }
     }
