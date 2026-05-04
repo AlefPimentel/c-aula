@@ -1,7 +1,7 @@
-﻿namespace NewImobiliaria.Observer
+namespace NewImobiliaria.Observer
 {
     public interface IObserver
     {
-        void Atualizar(string mensagem);
+        void Update(string evento, object data);
     }
 }
