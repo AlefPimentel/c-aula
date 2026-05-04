@@ -2,11 +2,11 @@ using System;
 
 namespace NewImobiliaria.Observer
 {
-    public class LogObserver : IObserver
+    public class AnalyticsObserver : IObserver
     {
         public void Update(string evento, object data)
         {
-            Console.WriteLine($"LOG [{evento}] {data}");
+            Console.WriteLine($"Evento trackeado '{evento}' com dados: {data}");
         }
     }
 }

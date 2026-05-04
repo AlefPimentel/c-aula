@@ -25,12 +25,13 @@ namespace NewImobiliaria.Controllers
         */
         static ImovelController()
         {
-            var subject = new ImovelSubject();
+            var eventBus = new EventBus();
 
-            // Observer que faz log no console
-            subject.AdicionarObserver(new LogObserver());
+            eventBus.Subscribe("novo_lead", new LogObserver());
+            eventBus.Subscribe("novo_lead", new EmailObserver());
+            eventBus.Subscribe("novo_lead", new AnalyticsObserver());
 
-            _service = new ImovelService(subject);
+            _service = new ImovelService(eventBus);
         }
 
         // =========================
@@ -59,6 +60,9 @@ namespace NewImobiliaria.Controllers
                 .SetTitulo(imovel.Titulo)
                 .SetTipo(imovel.Tipo)
                 .SetPreco(imovel.Preco)
+                .SetArea(imovel.Area)
+                .SetCidade(imovel.Cidade)
+                .SetQuartos(imovel.Quartos)
                 .Build();
 
             return Ok(_service.Criar(novo));

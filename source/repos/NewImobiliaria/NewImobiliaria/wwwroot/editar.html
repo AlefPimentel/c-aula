@@ -1,29 +1,7 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Editar Imóvel</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body onload="carregar()">
-
-    <div class="container">
-        <h1>Editar Imóvel</h1>
-
-        <input id="id" readonly />
-        <input id="titulo" />
-
-        <select id="tipo">
-            <option>Casa</option>
-            <option>Apartamento</option>
-        </select>
-
-        <input id="preco" />
-
-        <button onclick="atualizar()">Atualizar</button>
-
-        <a href="index.html">Voltar</a>
-    </div>
-
-    <script src="app.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Editar Imóvel</title><link rel="stylesheet" href="style.css"></head><body onload="carregar()">
+<header class="topbar"><div class="brand">🏠 NewImobiliaria</div><nav><a href="index.html">Home</a><a href="plp.html">PLP</a><a href="lp.html">LP</a></nav></header>
+<div class="page"><div class="form-wrapper"><h1>Editar Imóvel</h1><div class="form-grid">
+<div class="field"><label>ID</label><input id="id" readonly></div><div class="field"><label>Tipo</label><select id="tipo"><option>Casa</option><option>Apartamento</option></select></div>
+<div class="field full"><label>Título</label><input id="titulo"></div><div class="field"><label>Preço</label><input id="preco" type="number"></div><div class="field"><label>Cidade</label><input id="cidade"></div>
+<div class="field"><label>Área (m²)</label><input id="area" type="number"></div><div class="field"><label>Quartos</label><input id="quartos" type="number"></div>
+</div><div class="hero-actions"><button onclick="atualizar()" class="btn">Atualizar</button><a class="btn ghost" href="plp.html">Voltar</a></div></div></div><script src="app.js"></script></body></html>
